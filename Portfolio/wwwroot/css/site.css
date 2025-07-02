@@ -2,8 +2,7 @@
 
 @font-face {
   font-family: "LCTMogi-A";
-  src: url("fonts/LCTMogi-A.woff2") format("woff2"),
-  url("fonts/LCTMogi-C.woff2") format("woff3");
+  src: url("../fonts/LCTMogi-A.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -11,7 +10,7 @@
 
 @font-face {
   font-family: "LCTMogi-C";
-  src: url("fonts/LCTMogi-C.woff2") format("woff2");
+  src: url("../fonts/LCTMogi-C.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -19,7 +18,7 @@
 
 @font-face {
   font-family: "Nura-normal";
-  src: url("fonts/Nura-Normal.woff2") format("woff2");
+  src: url("../fonts/Nura-Normal.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -27,7 +26,7 @@
 
 @font-face {
   font-family: "Nura-light";
-  src: url("fonts/Nura-Light.woff2") format("woff2");
+  src: url("../fonts/Nura-Light.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -35,7 +34,7 @@
 
 @font-face {
   font-family: "Nura-bold";
-  src: url("fonts/Nura-Bold.woff2") format("woff2");
+  src: url("../fonts/Nura-Bold.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -43,7 +42,7 @@
 
 @font-face {
   font-family: "Boxing-normal";
-  src: url("fonts/Boxing-Regular.woff2") format("woff2");
+  src: url("../fonts/Boxing-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -334,7 +333,7 @@ nav {
 
 }
 .card-4 .card-content {
-  background-image: url("pics/meg.png");
+  background-image: url("../pics/meg2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -519,7 +518,7 @@ body.layout-2 {
 }
 
 .layout-2 .card-4 .card-content {
-  background-image: url("pics/meg.png");
+  background-image: url("../pics/meg.png");
 }
 
 .layout-2 .card-5 {
