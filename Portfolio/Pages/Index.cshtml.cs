@@ -6,12 +6,9 @@ namespace Portfolio.Pages;
 public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;
-
-    public List<Skill> Frontend { get; set; } = new();
-    public List<Skill> Backend { get; set; } = new();
-    public List<Skill> Other { get; set; } = new();
-    
-    public List<Skill> Skills { get; set; } = new List<Skill>();
+    public List<Skill> Skills { get; set; } = new();
+    public List<string> RandomSkillList { get; set; } = new();
+    private int n = 0;
     
     public IndexModel(ILogger<IndexModel> logger)
     {
@@ -19,22 +16,8 @@ public class IndexModel : PageModel
     }
     public void OnGet()
     {
-        Frontend = new List<Skill>
-        {
-            new Skill { Name = "CSS" },
-            new Skill { Name = "HTML" },
-            new Skill { Name = "JavaScript"},
-            new Skill { Name = "PHP"}
-        };
 
-        Backend = new List<Skill>
-        {
-            new Skill { Name = "C#" },
-            new Skill { Name = "Java" },
-            new Skill { Name = ".NET" }
-        };
-
-        Other = new List<Skill>
+        Skills = new List<Skill>
         {
             new Skill { Name = "Linux" },
             new Skill { Name = "Git" },
@@ -47,10 +30,17 @@ public class IndexModel : PageModel
             new Skill { Name = "MySQL" },
             new Skill { Name = "Pl/SQL" },
             new Skill { Name = "SQLite" },
-            new Skill { Name = "On-prem"}
+            new Skill { Name = "On-prem"},
+            new Skill { Name = "C#" },
+            new Skill { Name = "Java" },
+            new Skill { Name = ".NET" }
         };
         
-        
+        var rand = new Random();
+        RandomSkillList = Skills
+            .OrderBy(x => rand.Next())
+            .Select(x => x.Name)
+            .ToList();
     }
 
     public class Skill

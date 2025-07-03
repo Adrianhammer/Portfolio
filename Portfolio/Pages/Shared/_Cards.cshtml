@@ -12,23 +12,21 @@
         <div class="card card-2">
             <div class="card-content">
                 <h1>Skills</h1>
-                <div class="marquee-container">
-                    <div class="marquee-content">
-                        @foreach (var skill in Model.Other)
+                <div class="skill-group-container">
+                    <div class="skill-group-content">
+                        @for (int i = 0; i < Model.RandomSkillList.Count; i+= 3)
                         {
-                            <span class="skill-tag">@skill.Name</span>
-                        }
-                        @foreach (var skill in Model.Other)
-                        {
-                            <span class="skill-tag">@skill.Name</span>
+                            <div class="skill-group">
+                            @for (int j = i; j < i + 3 && j < Model.RandomSkillList.Count; j++)
+                            {
+                                    <p>@Model.RandomSkillList[j]</p>
+                            }
+                            </div>
                         }
                     </div>
                 </div>
             </div>
         </div>
-        
-                
-            
 
         <div class="card card-3">
             <div class="card-content">
@@ -59,7 +57,6 @@
                 </a>
             </div>
         </div>
-
     </div>
 
 <div class="grid-container layout-2">
