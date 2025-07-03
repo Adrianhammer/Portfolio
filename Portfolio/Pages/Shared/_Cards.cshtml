@@ -1,3 +1,5 @@
+@model IndexModel
+
 <div class="carousel-container">
     <!-- Layout 1 -->
     <div class="grid-container layout-1">
@@ -6,12 +8,27 @@
                 <h1>Clean code.<br><em>Thoughtful design.</em> <br> No fluff.</h1>
             </div>
         </div>
-
+        
         <div class="card card-2">
             <div class="card-content">
-                <h1>Projects</h1>
+                <h1>Skills</h1>
+                <div class="marquee-container">
+                    <div class="marquee-content">
+                        @foreach (var skill in Model.Other)
+                        {
+                            <span class="skill-tag">@skill.Name</span>
+                        }
+                        @foreach (var skill in Model.Other)
+                        {
+                            <span class="skill-tag">@skill.Name</span>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
+        
+                
+            
 
         <div class="card card-3">
             <div class="card-content">
@@ -44,7 +61,6 @@
         </div>
 
     </div>
-
 
 <div class="grid-container layout-2">
     <div class="card card-1">
