@@ -556,8 +556,14 @@ body.layout-2 {
   grid-column: span 2;
 }
 
-.layout-2 .card-2 h1 {
+.layout-2 .card-2  h1  {
   font-family: "Boxing-normal", "sans-serif";
+  text-decoration: none;
+
+}
+
+.layout-2 .card-2 a {
+  text-decoration:  none;
 }
 
 .layout-2 .card-3 {
@@ -604,6 +610,7 @@ body.layout-2 {
 
 .layout-2 .card-content a {
   font-family: "Boxing-normal", "sans-serif";
+  color: #333
 }
 
 
