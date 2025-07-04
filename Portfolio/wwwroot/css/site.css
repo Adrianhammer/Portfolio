@@ -333,7 +333,7 @@ nav {
   overflow: hidden;
 }
 
-.skill-group {
+.skill-text {
   position: absolute;
   top: 0;
   left: 0;
@@ -341,11 +341,32 @@ nav {
   display: none;
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
+  
 }
 
-.skill-group.active {
+.skill-text.active {
   display:  block;
   opacity: 1;
+  
+}
+
+.skill-text p {
+  font-family: "LCTMogi-A", "sans-serif";
+  display: inline-block;
+  text-align: center;
+  height: 1em;
+  font-size: 2.5em;
+  width: 100%;
+  color: #F5F0F0;
+  text-shadow:
+          0 0 0px black,
+          2px 2px 0px black,
+          2px 2px 0px black;
+}
+
+.skill-image {
+  width: 10px;
+  height: 10px;
 }
 
 
@@ -541,11 +562,13 @@ body.layout-2 {
 
 .layout-2 .card-3 {
   background-color: #D7CFBC;
-}
-
-.layout-2 .card-3 {
   grid-column: span 1;
   grid-row: span 2;
+}
+
+.layout-2 p {
+  font-family: "Boxing-normal", "sans-serif";
+  line-height: 2;
 }
 
 .layout-2 .card-4 {

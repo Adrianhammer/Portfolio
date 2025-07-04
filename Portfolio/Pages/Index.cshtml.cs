@@ -19,21 +19,21 @@ public class IndexModel : PageModel
 
         Skills = new List<Skill>
         {
-            new Skill { Name = "Linux" },
-            new Skill { Name = "Git" },
-            new Skill { Name = "Docker" },
-            new Skill { Name = "Powershell" },
-            new Skill { Name = "Terraform" },
-            new Skill { Name = "Azure" },
-            new Skill { Name = "MariaDB" },
-            new Skill { Name = "SQL" },
-            new Skill { Name = "MySQL" },
-            new Skill { Name = "Pl/SQL" },
-            new Skill { Name = "SQLite" },
-            new Skill { Name = "On-prem"},
-            new Skill { Name = "C#" },
-            new Skill { Name = "Java" },
-            new Skill { Name = ".NET" }
+            new Skill { Name = "Linux", ImageURL = "pics/Linux.png" },
+            new Skill { Name = "Git",  ImageURL = "pics/Git.png" },
+            new Skill { Name = "Docker",  ImageURL = "pics/Docker.png" },
+            new Skill { Name = "Powershell",  ImageURL = "pics/Powershell.png" },
+            new Skill { Name = "Terraform",   ImageURL = "pics/HashiCorp Terraform.png" },
+            new Skill { Name = "Azure", ImageURL = "pics/Azure.png"},
+            new Skill { Name = "MariaDB",   ImageURL = "pics/MySQL.png" },
+            new Skill { Name = "SQL", ImageURL = "pics/MySQL" },
+            new Skill { Name = "MySQL",   ImageURL = "pics/MySQL.png" },
+            new Skill { Name = "Pl/SQL", ImageURL = "pics/SQLite.png"},
+            new Skill { Name = "SQLite",    ImageURL = "pics/SQLite.png" },
+            new Skill { Name = "On-prem", ImageURL = "pics/Azure.png"},
+            new Skill { Name = "C#", ImageURL = "pics/Csharp_Logo.png"},
+            new Skill { Name = "Java",  ImageURL = "pics/Java.png" },
+            new Skill { Name = ".NET", ImageURL = "pics/NET core.png"}
         };
         
         var rand = new Random();
@@ -46,5 +46,6 @@ public class IndexModel : PageModel
     public class Skill
     {
         public string Name { get; set; }
+        public string ImageURL { get; set; }
     }
 }

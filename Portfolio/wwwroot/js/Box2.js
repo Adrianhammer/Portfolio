@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const groups = document.querySelectorAll(".skill-group");
+    const groups = document.querySelectorAll(".skill-text");
     let current = 0;
     
     if (groups.length === 0) return;
@@ -12,5 +12,5 @@ document.addEventListener("DOMContentLoaded", () => {
         groups[current].classList.remove("active");
         current = (current + 1) % groups.length;
         groups[current].classList.add("active");
-    }, 3000);
+    }, 2500);
 })

@@ -16,10 +16,11 @@
                     <div class="skill-group-content">
                         @for (int i = 0; i < Model.RandomSkillList.Count; i+= 3)
                         {
-                            <div class="skill-group">
+                            <div class="skill-text">
                             @for (int j = i; j < i + 3 && j < Model.RandomSkillList.Count; j++)
                             {
-                                    <p>@Model.RandomSkillList[j]</p>
+                                <p>@Model.RandomSkillList[j]</p>
+                                
                             }
                             </div>
                         }
@@ -30,7 +31,9 @@
 
         <div class="card card-3">
             <div class="card-content">
-                <p>Hi, <br>I’m a developer and consultant based in Oslo. My work ranges from building web apps to helping teams manage cloud and on-prem systems, mainly with Azure. I care about writing clean code, solving the right problems, and being someone people can rely on in complex projects.</p>
+                <p>Hi, <br> I’m Adrian — Oslo-based developer and consultant working at Sopra Steria. <br/>I make tools that loook good and doesn´t steal your time.
+                    I believe good solutions shuold be inutitive to use and not begging for attention. Good tech should feel obvious — 
+                    not like another system you have to “figure out.”</p>
             </div>
         </div>
 
@@ -74,7 +77,9 @@
 
         <div class="card card-3">
             <div class="card-content">
-                <p>Hi, <br>I’m a developer and consultant based in Oslo. My work ranges from building web apps to helping teams manage cloud and on-prem systems, mainly with Azure. I care about writing clean code, solving the right problems, and being someone people can rely on in complex projects.</p>
+                <p>With a background in IT and Information Systems, I’ve worked across web development and platform engineering 
+                    — whether that’s in the cloud or tailored on-prem tech that actually makes a difference. 
+                    I’m big on clean design, always up for learning something new, and believe collaboration beats ego every time.</p>
             </div>
         </div>
 
