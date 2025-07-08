@@ -1,4 +1,4 @@
-name: Deploy Portfolio to Home Server
+name: Deploy Portfolio Locally
 
 on:
   push:
@@ -13,22 +13,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Check dotnet version
-        run: dotnet --version
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
 
       - name: Restore dependencies
         run: dotnet restore
 
-      - name: Restore dependencies
-        run: dotnet restore
+      - name: Build and publish to local folder
+        run: dotnet publish -c Release -o /var/www/portfolio
 
-      - name: Build and publish
-        run: dotnet publish -c Release -o publish
+      - name: Restart site service (optional)
+        run: sudo systemctl restart portfolio.service
 
-      - name: Copy publish folder to server via SCP
-        run: |
-          scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -r publish/* ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/portfolio
-
-      - name: Restart portfolio service on server
-        run: |
-          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "sudo systemctl restart my-po_
