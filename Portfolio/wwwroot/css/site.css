@@ -341,13 +341,13 @@ nav {
   display: none;
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
-  
+
 }
 
 .skill-text.active {
   display:  block;
   opacity: 1;
-  
+
 }
 
 .skill-text p {
@@ -629,9 +629,20 @@ body.layout-2 {
   .card {
     padding: 25px;
   }
+
+  .layout-2 .card-3 p {
+    font-size: 1rem
+  }
+
+  .card-5 .figurine {
+    width: 130px;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
 }
 
-@media (max-width: 1440px) {
+@media (min-width: 1440px) {
   .grid-container {
     max-width: 1440px;
     gap: 25px;
@@ -641,18 +652,27 @@ body.layout-2 {
   .card-1 .card-content h1 {
     font-size: 2.7rem;
   }
+  
+  .card-2 .card-content p {
+    font-size: 1.6rem;
+  }
 
   .card {
     padding: 25px;
   }
 
   .card-5 .figurine {
-    width: 100px;
+    width: 150px;
     height: auto;
     display: block;
     margin: auto;
   }
+
+  .layout-2 .card-3 p {
+    font-size: 1rem
+  }
 }
+
 
 @media (min-width: 1600px) {
   .grid-container {
@@ -668,6 +688,10 @@ body.layout-2 {
   .card {
     padding: 25px;
   }
+
+  .layout-2 .card-3 p {
+    font-size: 1.3rem
+  }
 }
 
 @media (min-width: 1800px) {
@@ -678,6 +702,10 @@ body.layout-2 {
 
   .card-1 .card-content h1 {
     font-size: 3.6rem;
+  }
+
+  .layout-2 .card-3 p {
+    font-size: 1.3rem
   }
 }
 
@@ -723,6 +751,10 @@ body.layout-2 {
     grid-template-rows: repeat(6, 180px);
     gap: 10px;
   }
+  
+  .card {
+    width: 100%;
+  }
 
   .card-1, .card-3 {
     grid-column: span 1;
@@ -732,9 +764,29 @@ body.layout-2 {
     grid-row: span 1;
   }
 
-  /* Font size for very small screens (phones) */
+  /* Font size for phones */
   .card-1 .card-content h1 {
-    font-size: 1.2rem; /* Adjusted for mobile */
+    font-size: 1.6rem; 
+  }
+  
+  .card-2 .card-content h1 {
+    font-size: 1.6rem;
+  }
+  
+  .card-2 .card-content p {
+    font-size: 1.5rem;
+  }
+  
+  .card-3 {
+    overflow: hidden;
+  }
+  
+  .card-3 p {
+    font-size: 0.9rem;
+  }
+  
+  .card-5 .figurine {
+    width: 80px;
   }
 
   nav {
@@ -745,3 +797,30 @@ body.layout-2 {
     margin-left: 15px;
   }
 }
+
+/* Layout 2 for phone */
+@media (max-width: 480px) {
+  .layout-2 .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .layout-2 .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 180px);
+    gap: 10px;
+  }
+  
+  .layout-2 .card-1,
+  .layout-2 .card-2,
+  .layout-2 .card-3,
+  .layout-2 .card-4,
+  .layout-2 .card-5,
+  .layout-2 .card-6 {
+    grid-column: span 1;
+    width: 100%;
+  }
+}
+
