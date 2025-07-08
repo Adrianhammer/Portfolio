@@ -21,7 +21,7 @@ app.UseAuthorization();
 
 app.UseStaticFiles();
 app.MapRazorPages();
-//.net 9 specific things
+//.net 9 specific things. Downgraded to .net 8 because of ubuntu 24.04
 //app.MapStaticAssets();
 //app.MapRazorPages()
 //    .WithStaticAssets();
