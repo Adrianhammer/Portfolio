@@ -21,6 +21,7 @@ app.UseAuthorization();
 
 app.UseStaticFiles();
 app.MapRazorPages();
+//.net 9 specific things
 //app.MapStaticAssets();
 //app.MapRazorPages()
 //    .WithStaticAssets();
