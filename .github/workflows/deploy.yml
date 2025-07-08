@@ -24,20 +24,10 @@ jobs:
       - name: Build and publish
         run: dotnet publish -c Release -o publish
 
-      - name: Upload via SSH
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.DEPLOY_KEY }}
-          source: "publish/*"
-          target: "/var/www/portfolio"
+      - name: Copy publish folder to server via SCP
+        run: |
+          scp -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -r publish/* ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/var/www/portfolio
 
-      - name: Restart systemd service (optional)
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.DEPLOY_KEY }}
-          script: |
-            sudo systemctl restart my-portfolio.service
+      - name: Restart portfolio service on server
+        run: |
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "sudo systemctl restart my-po_
