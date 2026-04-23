@@ -1,10 +1,175 @@
-﻿@page
-@model IndexModel
+﻿@model IndexModel
 @{
     ViewData["Title"] = "Adrian Hammer";
 }
 
-<main class="carousel-wrapper">
-    <partial name="_Cards" />
-    <script src="~/js/Box2.js" asp-append-version="true"></script>
-</main>
+<div class="page">
+
+    <header class="site-header">
+        <a href="#" class="brand">
+            <span class="brand-mark">a*</span>
+            <span class="brand-name">adrian hammer</span>
+        </a>
+        <div class="header-right">
+            <nav class="nav">
+                <a href="#projects">projects</a>
+                <a href="#writing">writing</a>
+                <a href="#contact">contact</a>
+            </nav>
+            <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">☾</button>
+        </div>
+    </header>
+
+    <section class="intro">
+        <h1 class="intro-title">
+            Hi, I'm Adrian.<br />
+            <span class="intro-subtitle">I build small, well-crafted things.</span>
+        </h1>
+        <p class="intro-body">
+            Oslo-based developer at <a class="handlink" href="https://soprasteria.com" target="_blank" rel="noopener">Sopra Steria</a>.
+            I make tools for the fun of it &mdash; a <a class="handlink" href="#projects">timer</a>, a
+            <a class="handlink" href="#projects">D&amp;D CLI</a>, a homelab held together by Terraform.
+            I care about clean code, thoughtful design, and software that doesn't beg for your attention.
+            Sometimes I <a class="handlink" href="#writing">write</a>, mostly I tinker.
+        </p>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="section-head">
+            <h2>Projects</h2>
+            @await Html.PartialAsync("_Squiggle")
+        </div>
+
+        <div class="tiles">
+            <a href="https://github.com/Adrianhammer" target="_blank" rel="noopener" class="tile" style="--tilt:-2.2deg">
+                <div class="tile-icon">@await Html.PartialAsync("_Icon", "gmcodex")</div>
+                <div class="tile-tag">CLI</div>
+                <div class="tile-title">GM Codex</div>
+                <div class="tile-desc">CLI for handling D&amp;D encounters</div>
+            </a>
+            <a href="https://github.com/Adrianhammer" target="_blank" rel="noopener" class="tile" style="--tilt:2.5deg">
+                <div class="tile-icon">@await Html.PartialAsync("_Icon", "timer")</div>
+                <div class="tile-tag">macOS</div>
+                <div class="tile-title">Just a Timer</div>
+                <div class="tile-desc">Simple as that. Just a timer.</div>
+            </a>
+            <a href="https://github.com/Adrianhammer" target="_blank" rel="noopener" class="tile" style="--tilt:-1.5deg">
+                <div class="tile-icon">@await Html.PartialAsync("_Icon", "homelab")</div>
+                <div class="tile-tag">Infra</div>
+                <div class="tile-title">Homelab</div>
+                <div class="tile-desc">Terraform + Ansible setup</div>
+            </a>
+            <a href="https://github.com/Adrianhammer" target="_blank" rel="noopener" class="tile" style="--tilt:1.8deg">
+                <div class="tile-icon">@await Html.PartialAsync("_Icon", "ssh")</div>
+                <div class="tile-tag">CLI</div>
+                <div class="tile-title">SSH Portfolio</div>
+                <div class="tile-desc">ssh portfolio.hammer.dev</div>
+            </a>
+        </div>
+
+        <div class="projects-foot">
+            <a class="handlink" href="https://github.com/Adrianhammer" target="_blank" rel="noopener">more on GitHub &rarr;</a>
+        </div>
+    </section>
+
+    <section class="writing" id="writing">
+        <div class="section-head">
+            <h2>Writing</h2>
+            @await Html.PartialAsync("_Squiggle")
+        </div>
+        <ul class="rows">
+            <li class="row">
+                <a href="#" class="row-link">
+                    <div class="row-icon">@await Html.PartialAsync("_Icon", "post")</div>
+                    <div class="row-main">
+                        <div class="row-title">Why I moved to Proxmox</div>
+                        <div class="row-desc">Self-hosting notes on going all-in.</div>
+                    </div>
+                    <div class="row-meta">2026</div>
+                </a>
+            </li>
+            <li class="row">
+                <a href="#" class="row-link">
+                    <div class="row-icon">@await Html.PartialAsync("_Icon", "post")</div>
+                    <div class="row-main">
+                        <div class="row-title">Small apps, built well</div>
+                        <div class="row-desc">On craft, restraint, and saying no to features.</div>
+                    </div>
+                    <div class="row-meta">2025</div>
+                </a>
+            </li>
+            <li class="row">
+                <a href="#" class="row-link">
+                    <div class="row-icon">@await Html.PartialAsync("_Icon", "post")</div>
+                    <div class="row-main">
+                        <div class="row-title">The joy of CLI tools</div>
+                        <div class="row-desc">Why the terminal still feels like home.</div>
+                    </div>
+                    <div class="row-meta">2025</div>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <section class="two-col">
+        <div>
+            <div class="section-head">
+                <h2>Work</h2>
+                @await Html.PartialAsync("_Squiggle")
+            </div>
+            <ul class="plain">
+                <li>
+                    <strong>Sopra Steria</strong><span class="muted"> · consultant · 2023&rarr;</span>
+                    <div class="sub">Platform engineering, .NET &amp; cloud</div>
+                </li>
+                <li>
+                    <strong>Freelance</strong><span class="muted"> · 2021&rarr;23</span>
+                    <div class="sub">Web &amp; infra bits and bobs</div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="section-head">
+                <h2>Stack</h2>
+                @await Html.PartialAsync("_Squiggle")
+            </div>
+            <div class="chips">
+                @foreach (var s in new[] { ".NET", "C#", "Azure", "Terraform", "Ansible", "Docker", "Linux", "Proxmox", "PowerShell" })
+                {
+                    <span class="chip">@s</span>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <div class="contact-text">
+                <div class="section-head">
+                    <h2>Say hi</h2>
+                    @await Html.PartialAsync("_Squiggle")
+                </div>
+                <p>
+                    Got a project, a question, or just want to talk shop?
+                    <a class="handlink" href="mailto:adrian10hammer@gmail.com">adrian10hammer@gmail.com</a>
+                </p>
+                <div class="contact-links">
+                    <a class="handlink" href="https://github.com/Adrianhammer" target="_blank" rel="noopener">GitHub</a>
+                    <span class="dot">·</span>
+                    <a class="handlink" href="https://www.linkedin.com/in/adrianhammer/" target="_blank" rel="noopener">LinkedIn</a>
+                    <span class="dot">·</span>
+                    <a class="handlink" href="mailto:adrian10hammer@gmail.com">Email</a>
+                </div>
+            </div>
+            <a href="mailto:adrian10hammer@gmail.com" class="stamp">say hi &rarr;</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <span>adrian hammer · oslo</span>
+        <span class="est">est. 2025 <span class="dot-live">●</span></span>
+    </footer>
+
+</div>
+
+<script src="~/js/site.js" asp-append-version="true"></script>

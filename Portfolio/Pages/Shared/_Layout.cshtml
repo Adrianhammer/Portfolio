@@ -1,50 +1,25 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, Adrian Hammer is a consultant specializing in ASP.NET and cloud platforms."/>
-    <title>@ViewData["Title"] - Portfolio</title>
-    <script type="importmap"></script>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-    <!-- CLI Icon -->
-    <link rel="icon" type="image/x-icon" href="~/icons/favicon.ico" asp-append-version="true" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Adrian Hammer — Oslo-based developer at Sopra Steria. Small, well-crafted tools, CLIs, and self-hosted infra." />
+    <title>@ViewData["Title"] — Portfolio</title>
+
+    <link rel="icon" type="image/svg+xml"
+          href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text x='16' y='24' font-family='JetBrains Mono,monospace' font-size='22' font-weight='700' text-anchor='middle' fill='%23c2410c'>a*</text></svg>" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
-
 <body>
-<header>
-    <nav>
-        <div class="logo-group">
-            <div class="logo">ADRIAN HAMMER</div>
-            <button
-                type="button"
-                class="logo-button layout-1 layout-2" 
-                id="style-button"
-                aria-label="Change style"
-            ></button>
-        </div>
-
-        <!-- Fjerna top nav tekst, så mer clean ut, rydd opp senere -->
-        <div class="nav-links">
-            <a href="https://github.com/Adrianhammer" target="_blank"></a>
-            <a href="#about"></a>
-            <a href="mailto:adrian10hammer@gmail.com"></a>
-        </div>
-    </nav>
-</header>
-
-<div class="container">
-    <main role="main" class="pb-3">
+    <main role="main">
         @RenderBody()
     </main>
-</div>
 
-<footer class="border-top footer text-muted">
-    <div class="container">
-    </div>
-</footer>
-
-<script src="~/js/site.js" asp-append-version="true"></script>
-
-@await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
