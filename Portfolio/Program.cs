@@ -5,7 +5,14 @@ builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
-app.UseExceptionHandler("/Error");
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error");
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
 
 app.UseRouting();
 
